@@ -29,7 +29,7 @@ def validateeq(equation):
         return False
     leftres=safe_eval(left)
     rightres=safe_eval(right)
-    return (leftres) and (float(leftres)==float(rightres))
+    return (leftres) and (rightres) and (float(leftres)==float(rightres))
     
 
     
