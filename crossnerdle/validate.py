@@ -1,6 +1,3 @@
-
-
-
 numbs=set("0123456789")
 operators=set("+-/*=")
 
@@ -13,7 +10,17 @@ def safe_eval(expr):
 
 
 def validateeq(equation):
+    """tests to see if an equation is valid.
+    First tests if there is a left and right part.
+    Then if each part is a valid expression.
+    Finally if they are equal
 
+    Args:
+        equation (list[str]): equation as list of characters
+
+    Returns:
+        bool: validity of an equation
+    """
     eqsplit="".join(equation).split("=")
     if len(eqsplit)!=2:
         return False
@@ -22,7 +29,7 @@ def validateeq(equation):
         return False
     leftres=safe_eval(left)
     rightres=safe_eval(right)
-    return (leftres) and (rightres) and (float(leftres)==float(rightres))
+    return (leftres) and (float(leftres)==float(rightres))
     
 
     
